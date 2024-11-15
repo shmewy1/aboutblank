@@ -8,7 +8,7 @@
         // Function to prompt until correct value is entered
         (function() {
             let x = null;
-            while (x !== "polytrack") {
+            while (x !== "aboutblank") {
                 x = prompt("Testing, testing, 1, 2, 3...");
                 if (x === null) {
                     // If user cancels, stop the script and do not load the page
@@ -28,7 +28,8 @@
 	<script>
 		function openGame() {
 var win = window.open()
-var url = "https://hypackellite.github.io/play"
+var url = ""
+url = prompt('link:?');
 var iframe = win.document.createElement('iframe')
 iframe.style.width = "100%";
 iframe.style.height = "100%";
