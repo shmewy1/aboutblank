@@ -5,7 +5,14 @@
 
 <body>
 	<script>
-		const link = prompt("Link:")
+		let link = prompt("Link:")
+
+        if (link === "a") {
+            link = localStorage.getItem("a") || "a"
+        }
+        
+        localStorage.setItem("a", link)
+
         if (link) {
             const doc = window.open("about:blank")
             console.log(`<iframe src="${link}" width="100%" height="100%"></iframe>`)
