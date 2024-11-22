@@ -1,42 +1,16 @@
 <html>
 
 <head>
-	  <script>
-        // Hide the body by default to prevent content from loading until the prompt is validated
-        document.documentElement.style.display = 'none';
-
-        // Function to prompt until correct value is entered
-        (function() {
-            let x = null;
-            while (x !== "aboutblank") {
-                x = prompt("Testing, testing, 1, 2, 3...");
-                if (x === null) {
-                    // If user cancels, stop the script and do not load the page
-                    alert("You have canceled the prompt. The page will not load.");
-                    throw new Error("User canceled the prompt."); // Stop further execution
-                }
-            }
-            // If correct input is entered, reveal the page content
-            document.documentElement.style.display = '';
-            alert("Correct! Now loading the page...");
-        })();
-		  var url = ""
-			url = prompt('link:?');
-    </script>
 </head>
 
 <body>
-	<button onclick="openGame()">Open Game</button>
 	<script>
-		function openGame() {
-var win = window.open()
-var iframe = win.document.createElement('iframe')
-iframe.style.width = "100%";
-iframe.style.height = "100%";
-iframe.style.border = "none";
-iframe.src = url
-win.document.body.appendChild(iframe)
-}
+		const link = prompt("Link:")
+        if (link) {
+            const doc = window.open("about:blank")
+            console.log(`<iframe src="${link}" width="100%" height="100%"></iframe>`)
+            doc.document.body.innerHTML += `<iframe src="${link}" width="100%" height="100%"></iframe>`
+        }
 	</script>
 </body>
 
